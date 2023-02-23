@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ottabit/static/css/main.a217508e.css",
+    "main.js": "/ottabit/static/js/main.b2736017.js",
+    "static/js/787.641339b6.chunk.js": "/ottabit/static/js/787.641339b6.chunk.js",
+    "static/media/foto-profilo.png": "/ottabit/static/media/foto-profilo.1ef0049ccc4e077d463a.png",
+    "index.html": "/ottabit/index.html",
+    "main.a217508e.css.map": "/ottabit/static/css/main.a217508e.css.map",
+    "main.b2736017.js.map": "/ottabit/static/js/main.b2736017.js.map",
+    "787.641339b6.chunk.js.map": "/ottabit/static/js/787.641339b6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a217508e.css",
+    "static/js/main.b2736017.js"
+  ]
+}
