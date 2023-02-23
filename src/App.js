@@ -1,7 +1,7 @@
 import "./App.css";
 import fotoProfilo from "./assets/foto-profilo.png";
 import React, { useState, useEffect } from "react";
-import { Container, CssBaseline, Grid } from "@mui/material";
+import { Container, CssBaseline, Grid, ListItem } from "@mui/material";
 import {
   Timeline,
   TimelineItem,
@@ -17,6 +17,7 @@ import { Image } from "react-bootstrap";
 import Header from "./components/header/header";
 import Emoji from "./components/emoji/emoji";
 import Social from "./components/social/social";
+import ScrollToTop from "react-scroll-to-top";
 
 const darkTheme = createTheme({
   palette: {
@@ -49,6 +50,7 @@ function App() {
           alignItems="center"
           style={{
             marginTop: 30,
+            width: "100vw",
           }}
         >
           <Grid item xs={10} sm={4} style={{ textAlign: "center" }}>
@@ -72,41 +74,10 @@ function App() {
             </h2>
           </Grid>
         </Grid>
+        <ListItem divider />
         <br />
         <Social />
-        <Grid container>
-          <Grid item xs={4} justifyContent="left">
-            <Timeline position="right">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>Mangia</TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>Scrivi Codice</TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>Dormi</TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot />
-                </TimelineSeparator>
-                <TimelineContent>Ricomincia</TimelineContent>
-              </TimelineItem>
-            </Timeline>
-          </Grid>
-        </Grid>
+        <ScrollToTop smooth />
       </ThemeProvider>
     </Container>
   );

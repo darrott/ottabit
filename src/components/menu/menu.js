@@ -6,12 +6,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { change } from "../../redux/themeSlice";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { Offcanvas } from "react-bootstrap";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Menu() {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 
-  const maxWidthBeforeChange = 900;
+  const maxWidthBeforeChange = 710;
 
   const [inOrOff, setInOrOff] = useState(
     width < maxWidthBeforeChange ? "off" : "in"
@@ -47,7 +48,7 @@ export default function Menu() {
   const handleShow = () => setShow(true);
 
   return (
-    <Grid container spacing={2} alignItems="center">
+    <Grid container spacing={2} alignItems="center" justifyContent="center">
       {inOrOff == "in" ? (
         <>
           <Grid item>Home</Grid>
@@ -63,11 +64,15 @@ export default function Menu() {
         </>
       ) : (
         <>
-          <DarkModeSwitch
-            checked={themeState == "light" ? false : true}
-            onChange={changeTheme}
-          />
-          <Button onClick={handleShow}>Menu</Button>
+          <Grid item>
+            <DarkModeSwitch
+              checked={themeState == "light" ? false : true}
+              onChange={changeTheme}
+            />
+          </Grid>
+          <Grid item>
+            <MenuIcon onClick={handleShow} />
+          </Grid>
           <Offcanvas
             show={show}
             onHide={handleClose}

@@ -7,21 +7,21 @@ import Menu from "../menu/menu";
 
 export default function Header() {
   return (
-    <Container>
-      <Grid
-        container
-        spacing={4}
-        alignItems="center"
-        justifyContent="space-between"
-        className="header"
-      >
-        <Grid item xs={6}>
-          <img src={logo} />
-        </Grid>
-        <Grid item>
-          <Menu />
-        </Grid>
+    <Grid
+      container
+      spacing={4}
+      alignItems="center"
+      justifyContent="space-between"
+      style={{
+        width: "100vw",
+      }}
+    >
+      <Grid item xs={8} sm={6} md={6}>
+        <Image src={logo} fluid />
       </Grid>
-    </Container>
+      <Grid item xs={4} sm={6} md={6}>
+        <Menu />
+      </Grid>
+    </Grid>
   );
 }
