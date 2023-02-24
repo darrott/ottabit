@@ -12,9 +12,6 @@ export default function Header() {
       spacing={4}
       alignItems="center"
       justifyContent="space-between"
-      style={{
-        width: "100vw",
-      }}
     >
       <Grid item xs={8} sm={6} md={6}>
         <Image src={logo} fluid />
