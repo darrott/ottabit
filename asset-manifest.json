@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/ottabit/static/css/main.a217508e.css",
-    "main.js": "/ottabit/static/js/main.93357268.js",
+    "main.js": "/ottabit/static/js/main.86c77f45.js",
     "static/js/787.641339b6.chunk.js": "/ottabit/static/js/787.641339b6.chunk.js",
     "static/media/foto-profilo.png": "/ottabit/static/media/foto-profilo.1ef0049ccc4e077d463a.png",
     "index.html": "/ottabit/index.html",
-    "static/media/test.md": "/ottabit/static/media/test.68f905fbae77492dedc8.md",
-    "static/media/test1.md": "/ottabit/static/media/test1.f0427b591719d0fad09f.md",
+    "static/media/test.md": "/ottabit/static/media/test.1e34b7415226cfde3470.md",
+    "static/media/test1.md": "/ottabit/static/media/test1.536d73a5b0ce41708231.md",
     "main.a217508e.css.map": "/ottabit/static/css/main.a217508e.css.map",
-    "main.93357268.js.map": "/ottabit/static/js/main.93357268.js.map",
+    "main.86c77f45.js.map": "/ottabit/static/js/main.86c77f45.js.map",
     "787.641339b6.chunk.js.map": "/ottabit/static/js/787.641339b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a217508e.css",
-    "static/js/main.93357268.js"
+    "static/js/main.86c77f45.js"
   ]
 }
