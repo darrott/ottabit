@@ -1,6 +1,6 @@
 import "./App.css";
-import fotoProfilo from "./assets/foto-profilo.png";
-import React, { useState, useEffect } from "react";
+import fotoProfilo from "./assets/foto-profilo.webp";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, CssBaseline, Grid, ListItem, Avatar } from "@mui/material";
 import {
   Timeline,
@@ -45,11 +45,14 @@ function App() {
     return r.keys().map(r);
   }
 
-  const markdown = importAll(
-    require.context("./blog_articles", false, /\.(md)$/)
-  );
+  const fetchPosts = useRef(false);
 
   useEffect(() => {
+    if (fetchPosts.current) return;
+    fetchPosts.current = true;
+    const markdown = importAll(
+      require.context("./blog_articles", false, /\.(md)$/)
+    );
     markdown.map((file_name) => {
       let filename = file_name.substring(file_name.lastIndexOf("/") + 1);
       filename = filename.split(".");
@@ -59,17 +62,21 @@ function App() {
         .then((res) => {
           fetch(res.default)
             .then((res) => res.text())
-            .then((res) => {
-              let indexOf = res.indexOf("ENDSTOPNOW");
-              let text = res.substring(0, indexOf);
-              setPost(...post, { text: text });
-            });
+            .then((res) => setPost((prevState) => [...prevState, res]));
         })
         .catch((err) => console.log(err));
     });
   }, []);
 
-  console.log("post", post);
+  const ImageMarkdown = ({ src, alt, title }) => (
+    <Image
+      src={process.env.PUBLIC_URL + src}
+      alt={alt}
+      title={title}
+      fluid
+      style={{ maxWidth: 250 }}
+    />
+  );
 
   return (
     <Container>
@@ -114,7 +121,21 @@ function App() {
         <br />
         <h2 style={{ textAlign: "center" }}>Ultimi Articoli</h2>
         <br />
-        <Markdown>{post.map((post) => post)}</Markdown>
+        <Grid container>
+          {post.map((article) => (
+            <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>
+              <Markdown
+                options={{
+                  overrides: {
+                    img: ImageMarkdown,
+                  },
+                }}
+              >
+                {article.substring(0, 250).trimEnd().concat("...")}
+              </Markdown>
+            </Grid>
+          ))}
+        </Grid>
         <br />
         <ListItem divider />
         <ScrollToTop smooth />
